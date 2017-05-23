@@ -1,0 +1,21 @@
+<table id="phonebook" class="table table-striped table-bordered">
+  <thead>
+  <tr>
+    <th>№</th>
+    <th>ФИО</th>
+    <th>№ телефона</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let phone of phonesService.phones, index">
+    <td>{{phone.id}}</td>
+    <td>{{phone.name}}</td>
+    <td>{{phone.phone}}</td>
+    <td>
+      <button class="btn btn-warning" (click)="update(phone)">Редактировать</button>
+      <button class="btn btn-danger" (click)="delete(phone.id, index)">Удалить</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
